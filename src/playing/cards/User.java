@@ -46,7 +46,7 @@ public class User {
 		boolean duplicate = false;
 		boolean end = false;
 		while (end == false) {
-			System.out.println(this.getName() + "さんの番です\n");
+			System.out.println(this.getName() + "さんのターンです\n");
 			User.board.display();
 			System.out.println("1枚目カードを添え字番号で選んでください :1回目行番号 2回目列番号");
 			System.out.println(this.getName() + "さん、選びたいカードの行番号を指定してください");

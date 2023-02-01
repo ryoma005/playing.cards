@@ -1,6 +1,5 @@
 package playing.cards;
 
-
 public class CardPool {
 	private int[][] field;
 	private static int row1 = 10;
@@ -20,8 +19,7 @@ public class CardPool {
 				int n = Integer.parseInt(inputCheck);
 				field = new int[n][n];
 				for (int x = 0; x < this.field.length; x++) {
-					int z = 1;
-					for (int y = 0; y < this.field[x].length; y++) {
+					for (int y = 0, z = 1; y < this.field[x].length; y++) {
 						this.field[x][y] = z;
 						++z;
 					}
@@ -75,7 +73,7 @@ public class CardPool {
 	public void display() { // カードの状況を見せる
 		for (int i = 0; i < field.length; i++) {
 			if (i == 0) {
-				System.out.print("    " + i);
+				System.out.print("  | " + i);
 			} else {
 				System.out.print("  " + i);
 			}
@@ -84,9 +82,9 @@ public class CardPool {
 		System.out.println();
 		for (int i = 0; i < field.length; i++) {
 			if (i == 0) {
-				System.out.print("_____");
+				System.out.print("--+--");
 			} else {
-				System.out.print("___");
+				System.out.print("---");
 			}
 		}
 		System.out.println("");
@@ -97,7 +95,7 @@ public class CardPool {
 					System.out.print(this.field[j][k] + "  ");
 				} else if (this.getRow2() == j && this.getColumn2() == k) {
 					System.out.print(this.field[j][k] + "  ");
-				} else if (this.field[j][k] >= 1 ) {
+				} else if (this.field[j][k] >= 1) {
 					System.out.print("■ ");
 				} else {
 					System.out.print("   ");
