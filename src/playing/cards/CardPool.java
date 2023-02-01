@@ -1,5 +1,6 @@
 package playing.cards;
 
+
 public class CardPool {
 	private int[][] field;
 	private static int row1 = 10;
@@ -10,7 +11,7 @@ public class CardPool {
 	public CardPool() { //多次元配列に初期値を生成するコンストラクタ
 		boolean numCheck = false;
 		while (numCheck == false) {
-			System.out.println("マス目の数を選んでください 例:2を入力すると→4枚カードが生成されます");
+			System.out.println("マス目の数を選んでください 例:2を入力すると→2*2枚カードが生成されます");
 			System.out.println("2,4,6,8から選んでください");
 			System.out.println("入力 ↓");
 			String inputCheck = new java.util.Scanner(System.in).nextLine();
@@ -90,7 +91,7 @@ public class CardPool {
 		}
 		System.out.println("");
 		for (int j = 0; j < field.length; j++) {
-			System.out.print(" " + j + "|");
+			System.out.print(j + " |");
 			for (int k = 0; k < field.length; k++) {
 				if (this.getRow1() == j && this.getColumn1() == k) {
 					System.out.print(this.field[j][k] + "  ");
@@ -99,7 +100,7 @@ public class CardPool {
 				} else if (this.field[j][k] >= 1 ) {
 					System.out.print("■ ");
 				} else {
-					System.out.print("□ ");
+					System.out.print("   ");
 				}
 			}
 			System.out.println("");

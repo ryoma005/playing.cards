@@ -1,5 +1,6 @@
 package playing.cards;
 
+
 public class User {
 	private String name;
 	private int count = 0;
@@ -9,7 +10,11 @@ public class User {
 	public User(int i) {
 		System.out.println(i + "人目のプレイヤーの名前を入力してください");
 		String name = new java.util.Scanner(System.in).nextLine();
-		this.setName(name);
+		if(name.isEmpty()) {
+			this.setName("ゲスト" + i);
+		}else {
+			this.setName(name);
+		}
 		User.board.random();
 	}
 
@@ -105,7 +110,7 @@ public class User {
 
 	public boolean duplicateCheck(int a, int b, int c, int d) {// 一枚目に選んだカードと同じカードを選んでいないかチェック
 		if (a == c && b == d) {
-			System.out.println("一枚目と同じカードです選びなおしてください\n");
+			System.out.println("1枚目と同じカードです選びなおしてください\n");
 			return false;
 		} else {
 			return true;
