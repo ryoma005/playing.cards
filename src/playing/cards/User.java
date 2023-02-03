@@ -4,8 +4,8 @@ package playing.cards;
 public class User {
 	private String name;
 	private int count = 0;
-	static private CardPool board = new CardPool();
-	static private boolean exitConditions = false;
+	private static CardPool board = new CardPool();
+	private static boolean exitConditions = false;
 
 	public User(int i) {
 		System.out.println(i + "人目のプレイヤーの名前を入力してください");
